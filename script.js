@@ -10,13 +10,17 @@ function startTimer(e) {
   const input = e.target.querySelector('input')
   input.disabled = true
 
+
+  const key = Date.now()
+  localStorage.setItem(key,input.value)
+
   progress.style.width = '100vw'
   progress.style.transitionDuration = WORK_TIME + 'ms'
 
   setTimeout(function () {
+
     input.disabled = false
     input.focus()
-    input.value = ''
 
     progress.style.transitionDuration = ''
     progress.style.width = ''
@@ -26,8 +30,24 @@ function startTimer(e) {
     tasks.appendChild(listItem)
 
 
-
+    input.value = ''
   }, WORK_TIME)
 }
 
+function loadHistory() {
+  const historySize = localStorage.length
+
+  if (historySize > 0) {
+    for (var i = 0; i < historySize; i++) {
+      const key = localStorage.key(i)
+      const taskName = localStorage.getItem(key)
+
+      const listItem = document.createElement('li')
+      listItem.innerText = taskName
+      tasks.appendChild(listItem)
+    }
+  }
+}
+
 form.onsubmit = startTimer
+loadHistory()
