@@ -1,1 +1,51 @@
-css
+@import "reset.css";
+@import "font-family: 'Open Sans', sans-serif;
+font-family: 'Quicksand', sans-serif;";
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+form {
+  margin-top: 45vh;
+
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+
+input {
+  text-align: center;
+
+  font-size: 8vw;
+  font-weight: 900;
+
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  padding-bottom: 0.2em;
+
+  transition: border-bottom 300ms ease;
+  caret-color: rgb(255, 0, 0);
+}
+
+input::placeholder {
+  color: #000;
+  font-style: italic;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.45);
+}
+
+
+ul {
+  text-align: center;
+  list-style: none;
+  text-decoration: line-through;
+
+  font-size: 4vw;
+  line-height: 2;
+  opacity: 0.25;
+}
