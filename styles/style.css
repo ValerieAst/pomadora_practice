@@ -39,8 +39,14 @@ input:focus {
   border-bottom: 1px solid rgba(0, 0, 0, 0.45);
 }
 
+input.disabled {
+ 
+}
 
 ul {
+  display: flex;
+  flex-direction: column-reverse;
+
   text-align: center;
   list-style: none;
   text-decoration: line-through;
@@ -48,4 +54,19 @@ ul {
   font-size: 4vw;
   line-height: 2;
   opacity: 0.25;
+}
+
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 0;
+  height:  100vh;
+
+
+  background-color: rgba(0, 0, 0, 0.25);
+
+  transition-property: width;
+  transition-timing-function: ease;
 }
